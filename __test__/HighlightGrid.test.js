@@ -77,10 +77,13 @@ describe('<HighlightGrid />', () => {
         }].reverse();
     });
 
-    /**
-     * TODO
-     */
-    it('will success', () => {
-        expect(false).toBe(false)
-    })
-})
+    it('will be equal to 3 GridList', () => {
+        const wrapper = shallow(<HighlightGrid highlights={highlights} />);
+        expect(wrapper.find('GridList').length).toBe(3);
+    });
+
+    it('first GridList has cols equals to 2', () => {
+        const wrapper = shallow(<HighlightGrid highlights={highlights} />);
+        expect(wrapper.find('GridList').first().contains('cols=2'));
+    });
+});
