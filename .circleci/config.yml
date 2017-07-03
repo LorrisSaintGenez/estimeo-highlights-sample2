@@ -15,4 +15,7 @@ jobs:
       staging:
         branch: master
         heroku:
-          appname: Estimeo-Lorris
+          appname: estimeo-lorris-deploy
+        commands:
+          - npm run build
+          - npm run start
